@@ -11,10 +11,7 @@
             <div class="card-body">
                 <div>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
-
-                           
-
+                        <ContentTemplate>                         
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label class="h6">Nombre del Evento</label>

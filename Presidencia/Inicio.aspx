@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="Presidencia.Inicio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="content" >
-
-        <div class="col-md-12">
-            <div class="js-fullheight d-flex justify-content-center align-items-center" data-stellar-background-ratio="0.5">
+    <div id="content" class="p-4 p-md-5 pt-5">
+        <div class="form-row">
                 <div class="col-md-12 text text-center">
                     <div class="card">
                         <div class="card-body" style="padding:150px">
@@ -13,7 +11,6 @@
                     </div>
 
                 </div>
-            </div>
         </div>
     </div>
 </asp:Content>

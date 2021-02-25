@@ -4,59 +4,64 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Presidencia TSJH</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Presidencia TSJH</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="lib/main.css" rel="stylesheet" />
+    <script src="lib/main.js"></script>
+    <script src="lib/locales/es.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
 </head>
 <body>
- <form runat="server">
-		
-		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				<div class="custom-menu">
-					<button type="button" id="sidebarCollapse" class="btn btn-primary">
-	          <i class="fa fa-bars"></i>
-	          <span class="sr-only">Toggle Menu</span>
-	        </button>
-        </div>
-	  		<h1><a href="Inicio.aspx" class="logo">Presidencia TSJH</a></h1>
-        <ul class="list-unstyled components mb-5">
-          <li class="active">
-            <a href="#"><span class="fa fa-user mr-3"></span>Agenda Presidencia</a>
-          </li>
-          <li>
-              <a href="#"><span class="fa fa-user mr-3"></span> Reserva Auditorio </a>
-          </li>
-          <li>
-            <a href="Ejemplo.aspx"><span class="fa fa-connectdevelop mr-3"></span> Formulario Ejemplo</a>
-          </li>
-        
-        </ul>
+    <form runat="server">
 
-    	</nav>
-           
+        <div class="wrapper d-flex align-items-stretch">
+            <nav id="sidebar">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                </div>
+                <h1><a href="Inicio.aspx" class="logo">Presidencia TSJH</a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="#"><span class="fa fa-user mr-3"></span>Agenda Presidencia</a>
+                    </li>
+                    <li>
+                        <a href="ReservaAuditorio.aspx"><span class="fa fa-user mr-3"></span>Reserva de Auditorio </a>
+                    </li>
+                    <li>
+                        <a href="Ejemplo.aspx"><span class="fa fa-connectdevelop mr-3"></span>Formulario Ejemplo</a>
+                    </li>
 
-           
-        <!-- Page Content  -->
+                </ul>
+
+            </nav>
+
+
+
+            <!-- Page Content  -->
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
             </asp:ContentPlaceHolder>
 
- </div>
+        </div>
 
-</form>
+    </form>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-  </body>
+</body>
 
 </html>
 

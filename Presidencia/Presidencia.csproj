@@ -74,12 +74,138 @@
     <Content Include="css\bootstrap\utilities\_stretched-link.css" />
     <Content Include="css\bootstrap\_media.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\StyleLogin.css" />
     <Content Include="Ejemplo.aspx" />
+    <Content Include="EstilosLogin\css\main.css" />
+    <Content Include="EstilosLogin\css\util.css" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="EstilosLogin\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="EstilosLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="EstilosLogin\images\bg-01.jpg" />
+    <Content Include="EstilosLogin\images\tsjh.jpg" />
+    <Content Include="EstilosLogin\images\tsjhgo.jpg" />
+    <Content Include="EstilosLogin\js\main.js" />
+    <Content Include="EstilosLogin\js\map-custom.js" />
+    <Content Include="EstilosLogin\vendor\animate\animate.css" />
+    <Content Include="EstilosLogin\vendor\animsition\css\animsition.css" />
+    <Content Include="EstilosLogin\vendor\animsition\css\animsition.min.css" />
+    <Content Include="EstilosLogin\vendor\animsition\js\animsition.js" />
+    <Content Include="EstilosLogin\vendor\animsition\js\animsition.min.js" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="EstilosLogin\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="EstilosLogin\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="EstilosLogin\vendor\bootstrap\js\popper.js" />
+    <Content Include="EstilosLogin\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="EstilosLogin\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="EstilosLogin\vendor\countdowntime\countdowntime.js" />
+    <Content Include="EstilosLogin\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="EstilosLogin\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="EstilosLogin\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="EstilosLogin\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="EstilosLogin\vendor\daterangepicker\moment.js" />
+    <Content Include="EstilosLogin\vendor\daterangepicker\moment.min.js" />
+    <Content Include="EstilosLogin\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="EstilosLogin\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="EstilosLogin\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="EstilosLogin\vendor\select2\select2.css" />
+    <Content Include="EstilosLogin\vendor\select2\select2.js" />
+    <Content Include="EstilosLogin\vendor\select2\select2.min.css" />
+    <Content Include="EstilosLogin\vendor\select2\select2.min.js" />
     <Content Include="Inicio.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\popper.js" />
+    <Content Include="lib\locales-all.js" />
+    <Content Include="lib\locales-all.min.js" />
+    <Content Include="lib\locales\af.js" />
+    <Content Include="lib\locales\ar-dz.js" />
+    <Content Include="lib\locales\ar-kw.js" />
+    <Content Include="lib\locales\ar-ly.js" />
+    <Content Include="lib\locales\ar-ma.js" />
+    <Content Include="lib\locales\ar-sa.js" />
+    <Content Include="lib\locales\ar-tn.js" />
+    <Content Include="lib\locales\ar.js" />
+    <Content Include="lib\locales\az.js" />
+    <Content Include="lib\locales\bg.js" />
+    <Content Include="lib\locales\bs.js" />
+    <Content Include="lib\locales\ca.js" />
+    <Content Include="lib\locales\cs.js" />
+    <Content Include="lib\locales\cy.js" />
+    <Content Include="lib\locales\da.js" />
+    <Content Include="lib\locales\de-at.js" />
+    <Content Include="lib\locales\de.js" />
+    <Content Include="lib\locales\el.js" />
+    <Content Include="lib\locales\en-au.js" />
+    <Content Include="lib\locales\en-gb.js" />
+    <Content Include="lib\locales\en-nz.js" />
+    <Content Include="lib\locales\eo.js" />
+    <Content Include="lib\locales\es-us.js" />
+    <Content Include="lib\locales\es.js" />
+    <Content Include="lib\locales\et.js" />
+    <Content Include="lib\locales\eu.js" />
+    <Content Include="lib\locales\fa.js" />
+    <Content Include="lib\locales\fi.js" />
+    <Content Include="lib\locales\fr-ca.js" />
+    <Content Include="lib\locales\fr-ch.js" />
+    <Content Include="lib\locales\fr.js" />
+    <Content Include="lib\locales\gl.js" />
+    <Content Include="lib\locales\he.js" />
+    <Content Include="lib\locales\hi.js" />
+    <Content Include="lib\locales\hr.js" />
+    <Content Include="lib\locales\hu.js" />
+    <Content Include="lib\locales\hy-am.js" />
+    <Content Include="lib\locales\id.js" />
+    <Content Include="lib\locales\is.js" />
+    <Content Include="lib\locales\it.js" />
+    <Content Include="lib\locales\ja.js" />
+    <Content Include="lib\locales\ka.js" />
+    <Content Include="lib\locales\kk.js" />
+    <Content Include="lib\locales\ko.js" />
+    <Content Include="lib\locales\lb.js" />
+    <Content Include="lib\locales\lt.js" />
+    <Content Include="lib\locales\lv.js" />
+    <Content Include="lib\locales\mk.js" />
+    <Content Include="lib\locales\ms.js" />
+    <Content Include="lib\locales\nb.js" />
+    <Content Include="lib\locales\ne.js" />
+    <Content Include="lib\locales\nl.js" />
+    <Content Include="lib\locales\nn.js" />
+    <Content Include="lib\locales\pl.js" />
+    <Content Include="lib\locales\pt-br.js" />
+    <Content Include="lib\locales\pt.js" />
+    <Content Include="lib\locales\ro.js" />
+    <Content Include="lib\locales\ru.js" />
+    <Content Include="lib\locales\sk.js" />
+    <Content Include="lib\locales\sl.js" />
+    <Content Include="lib\locales\sq.js" />
+    <Content Include="lib\locales\sr-cyrl.js" />
+    <Content Include="lib\locales\sr.js" />
+    <Content Include="lib\locales\sv.js" />
+    <Content Include="lib\locales\ta-in.js" />
+    <Content Include="lib\locales\th.js" />
+    <Content Include="lib\locales\tr.js" />
+    <Content Include="lib\locales\ug.js" />
+    <Content Include="lib\locales\uk.js" />
+    <Content Include="lib\locales\uz.js" />
+    <Content Include="lib\locales\vi.js" />
+    <Content Include="lib\locales\zh-cn.js" />
+    <Content Include="lib\locales\zh-tw.js" />
+    <Content Include="lib\main.css" />
+    <Content Include="lib\main.js" />
+    <Content Include="lib\main.min.css" />
+    <Content Include="lib\main.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="ReservaAuditorio.aspx" />
+    <Content Include="Scripts\CalendarioAuditorio.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +223,13 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPrincipal.Master.cs">
       <DependentUpon>MasterPrincipal.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,7 +239,15 @@
     </Compile>
     <Compile Include="Modelos\CConexion.cs" />
     <Compile Include="Modelos\MensajeAlerta.cs" />
+    <Compile Include="Modelos\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservaAuditorio.aspx.cs">
+      <DependentUpon>ReservaAuditorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservaAuditorio.aspx.designer.cs">
+      <DependentUpon>ReservaAuditorio.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\.DS_Store" />
@@ -116,6 +257,67 @@
     <Content Include="images\.DS_Store" />
     <Content Include="js\.DS_Store" />
     <Content Include="MasterPrincipal.Master" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="EstilosLogin\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="EstilosLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="EstilosLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="EstilosLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="EstilosLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="EstilosLogin\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="EstilosLogin\vendor\bootstrap\css\bootstrap.min.css.map" />
     <None Include="packages.config" />
     <Content Include="scss\.DS_Store" />
     <Content Include="scss\bootstrap\.DS_Store" />
@@ -215,6 +417,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EstilosLogin\images\icons\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
