@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 
-namespace AltaUsuariosPJ.Modelos
+namespace Presidencia.Modelos
 {
     public class MensajeAlerta
     {

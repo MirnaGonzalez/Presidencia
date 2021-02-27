@@ -1,5 +1,4 @@
-﻿using AltaUsuariosPJ.Modelos;
-using Presidencia.Modelos;
+﻿using Presidencia.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,11 +10,10 @@ using System.Web.UI.WebControls;
 
 namespace Presidencia
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class AgendaLogin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             Usuarios Usuario = Session["Usuario"] as Usuarios;
             if (Usuario != null)
             {
@@ -62,7 +60,7 @@ namespace Presidencia
                     cnn.Close();
                 //Alerta2.Visible = true;
                 //Password.Text = "";
-                MensajeAlerta.AlertaAviso(this,"Error", "Error :" + ex.Message);
+                MensajeAlerta.AlertaAviso(this, "Error", "Error :" + ex.Message);
             }
 
             try
@@ -86,7 +84,7 @@ namespace Presidencia
                     //Alerta3.Visible = true;
                     //Password.Text = "";    
 
-                    MensajeAlerta.AlertaAviso(this,"Alerta!", "Usuario no identificado.");
+                    MensajeAlerta.AlertaAviso(this, "Alerta!", "Usuario no identificado.");
 
                 }
 
@@ -103,6 +101,5 @@ namespace Presidencia
             }
         }
 
-    
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace AltaUsuariosPJ.Modelos
+namespace Presidencia.Modelos
 {
     public class CConexion
     {
@@ -13,7 +13,10 @@ namespace AltaUsuariosPJ.Modelos
             return "Data Source=200.79.183.181; Initial Catalog=Presidencia; Uid=Programadores2017; Password=Development10;";
         }
 
-
+        internal static string ObtenerWS()
+        {
+            return "http://serviciowebpjhgo.azurewebsites.net/api/";
+        }
 
     }
 }
