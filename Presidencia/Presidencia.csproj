@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgendaLogin.aspx" />
+    <Content Include="ConsAudienciaFoto.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\bootstrap\mixins\_border-radius.css" />
     <Content Include="css\bootstrap\mixins\_screen-reader.css" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="AgendaLogin.aspx.designer.cs">
       <DependentUpon>AgendaLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsAudienciaFoto.aspx.cs">
+      <DependentUpon>ConsAudienciaFoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsAudienciaFoto.aspx.designer.cs">
+      <DependentUpon>ConsAudienciaFoto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ejemplo.aspx.cs">
       <DependentUpon>Ejemplo.aspx</DependentUpon>
@@ -440,7 +448,35 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

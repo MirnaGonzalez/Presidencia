@@ -7,7 +7,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
+using System.Configuration;
+using System.Text;
+using System.Web.UI.HtmlControls;
 
 namespace Presidencia
 {
@@ -15,8 +19,8 @@ namespace Presidencia
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtFechaIni.Text = "01/02/2021";
-            txtFechaFin.Text = "28/05/2021";
+            txtFechaIni.Text = "01/01/2021";
+            txtFechaFin.Text = "31/12/2090";
         }
 
         protected void BtnExportar_Click(object sender, EventArgs e)
@@ -46,16 +50,10 @@ namespace Presidencia
             SqlDataReader rdr = null;
 
 
-            if (FechaIni == "")
+            if (!string.IsNullOrWhiteSpace(FechaIni) && !string.IsNullOrWhiteSpace(FechaFin))
             {
-                MensajeAlerta.AlertaAviso(this, "Alerta!", "Seleccione un rango de fechas");
-            }
-
-
-            else
-            {
-
-                 qry = @"SELECT IdAudiencia, Persona, TipoVisita, TipoAsunto, Telefono, FechaIni, FechaFin, InfoAdicional FROM vta_ReporteAudiencias WHERE (FechaIni BETWEEN   @FechaIni   AND @FechaFin ) ";
+              
+                qry = @"SELECT IdAudiencia, Persona, TipoVisita, TipoAsunto, Telefono, FechaIni, FechaFin, InfoAdicional FROM vta_ReporteAudiencias WHERE (FechaIni BETWEEN   @FechaIni   AND @FechaFin ) ";
 
                 if (IdAudiencia != "")
                 {
@@ -78,8 +76,15 @@ namespace Presidencia
                 }
 
                 qry += " ORDER BY FechaIni ASC ";
-
             }
+            else
+            {
+
+                MensajeAlerta.AlertaAviso(this, "Alerta!", "Seleccione un rango de fechas");
+            }
+                
+
+           
 
 
             cmd.Connection = cnn;
@@ -144,7 +149,7 @@ namespace Presidencia
                
                 gridAudiencias.DataSource=listaAudiencias;
                 gridAudiencias.DataBind();
-                LblTotal.Text = gridAudiencias.Rows.Count.ToString();
+                LblTotal.Text = "Total de registros: " + gridAudiencias.Rows.Count.ToString();
                 DivMostrar.Visible = true;
                
 
@@ -168,6 +173,34 @@ namespace Presidencia
 
             }
 
+
+        }
+
+
+        protected void Exportar_Click(object sender, EventArgs e)
+        {
+
+            gridAudiencias.Width = Unit.Percentage(0);
+            HttpResponse response = Response;
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            System.Web.UI.Page pageToRender = new System.Web.UI.Page();
+            HtmlForm form = new HtmlForm();
+
+
+            form.Controls.Add(gridAudiencias);
+            pageToRender.Controls.Add(form);
+            response.Clear();
+            response.Buffer = true;
+            response.ContentType = "application/vnd.ms-excel";
+            response.AddHeader("Content-Disposition", "attachment;filename=ReporteAudiencias.xls");
+            response.Charset = "UTF-8";
+            response.ContentEncoding = Encoding.Default;
+            pageToRender.RenderControl(htw);
+            response.Write(sw.ToString());
+            response.End();
+
+            gridAudiencias.Width = Unit.Percentage(100);
 
 
 

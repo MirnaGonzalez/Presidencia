@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="ReporteReservas.aspx.cs" Inherits="Presidencia.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="ReporteReservas.aspx.cs" Inherits="Presidencia.ReporteReservas" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
@@ -9,12 +10,22 @@
         <div class="card" >
             <div class="card-body">
                 <div>
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+<%--                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
 
-                           
+                           --%>
 
                             <div class="form-row">
+
+                                 <div class="form-group col-md-6">
+                                    <label class="h6">Fecha Inicio:</label>
+                                    <asp:TextBox TextMode="Date" runat="server" class="form-control" ID="txtFechaIni" ></asp:TextBox>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="h6">Fecha Fin:</label>
+                                    <asp:TextBox TextMode="Date" runat="server" class="form-control" ID="txtFechaFin" />
+                                </div>
+
                                 <div class="form-group col-md-12">
                                     <label class="h6">Número de reserva :</label>
                                     <asp:TextBox type="text" runat="server" class="form-control" ID="txtNumReserva" />
@@ -24,14 +35,7 @@
                                     <asp:TextBox type="text" runat="server" class="form-control" ID="txtNombreEvento" />
                                 </div>
                                 
-                                <div class="form-group col-md-6">
-                                    <label class="h6">Fecha Inicio:</label>
-                                    <asp:TextBox TextMode="Date" runat="server" class="form-control" ID="txtFechaIni" />
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label class="h6">Fecha Fin:</label>
-                                    <asp:TextBox TextMode="Date" runat="server" class="form-control" ID="txtFechaFin" />
-                                </div>
+
                                 
                             </div>
                            
@@ -67,8 +71,8 @@
                                     AutoGenerateColumns="False" Height="160px">
                                     <Columns>
 
-                                        <asp:BoundField DataField="IdReserva" HeaderText="No. Audiencia" Visible="false" />
-                                        <asp:BoundField DataField="Evento" HeaderText="Persona" />
+                                        <asp:BoundField DataField="IdReserva" HeaderText="No. Reserva"  />
+                                        <asp:BoundField DataField="Evento" HeaderText="Evento" />
                                         <asp:BoundField DataField="FechaIni" HeaderText="Fecha Inicio" DataFormatString="" />
                                         <asp:BoundField DataField="FechaFin" HeaderText="Fecha Fin" />
                                         <asp:BoundField DataField="InfoAdicional" HeaderText="Información Adicional" />
@@ -81,7 +85,8 @@
                                 <div class="container mb-lg-5">
                                 <div class="row">
                                     <div class="col-md-4 offset-md-4 justify-content-center align-items-center minh-100">
-                                        <asp:Button runat="server" type="submit" ID="Exportar" class="btn btn-primary btn-block" Text="Exportar" OnClick="Exportar_Click" ></asp:Button>
+                                        <asp:Button runat="server" type="submit" ID="Exportar" class="btn btn-primary btn-block" Text="Exportar" OnClick="BtnExportar_Click" ></asp:Button>
+                                         
                                     </div>
                                 </div>
 
@@ -95,9 +100,9 @@
 
                   </div>
 
-                  </ContentTemplate>
+<%--                  </ContentTemplate>
                </asp:UpdatePanel>
-          
+          --%>
             
             </div>
 

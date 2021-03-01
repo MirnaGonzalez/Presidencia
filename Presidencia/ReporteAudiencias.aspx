@@ -9,12 +9,24 @@
         <div class="card" >
             <div class="card-body">
                 <div>
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+<%--                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
 
-                           
+                           --%>
 
                             <div class="form-row">
+
+
+                                <div class="form-group col-md-6">
+                                    <label class="h6">Fecha Inicio:</label>
+                                    <asp:TextBox TextMode="Date" runat="server" class="form-control" ID="txtFechaIni" ></asp:TextBox>
+                                </div>
+                                 <div class="form-group col-md-6">
+                                    <label class="h6">Fecha Fin:</label>
+                                    <asp:TextBox TextMode="Date" runat="server" class="form-control" ID="txtFechaFin" ></asp:TextBox>
+                                </div>
+
+
                                 <div class="form-group col-md-12">
                                     <label class="h6">Número de audiencia :</label>
                                     <asp:TextBox type="text" runat="server" class="form-control" ID="txtNumAudiencia" />
@@ -40,14 +52,7 @@
                                         <asp:ListItem>Personal</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label class="h6">Fecha Inicio:</label>
-                                    <asp:TextBox TextMode="Date" runat="server" class="form-control" ID="txtFechaIni" >01/01/2021</asp:TextBox>
-                                </div>
-                                 <div class="form-group col-md-6">
-                                    <label class="h6">Fecha Fin:</label>
-                                    <asp:TextBox TextMode="Date" runat="server" class="form-control" ID="txtFechaFin" >28/02/2021</asp:TextBox>
-                                </div>
+
                                 
                             </div>
                                                         
@@ -100,7 +105,7 @@
                                 <div class="container mb-lg-5">
                                 <div class="row">
                                     <div class="col-md-4 offset-md-4 justify-content-center align-items-center minh-100">
-                                        <asp:Button runat="server" type="submit" ID="Exportar" class="btn btn-primary btn-block" Text="Exportar" ></asp:Button>
+                                        <asp:Button runat="server" type="submit" ID="Exportar" class="btn btn-primary btn-block" Text="Exportar" OnClick="Exportar_Click" ></asp:Button>
                                     </div>
                                 </div>
 
@@ -114,9 +119,9 @@
 
                   </div>
 
-                  </ContentTemplate>
+ <%--                  </ContentTemplate>
                </asp:UpdatePanel>
-          
+          --%>
             
             </div>
 

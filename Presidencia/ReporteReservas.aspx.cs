@@ -7,28 +7,24 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.Office.Interop.Excel;
+using System.IO;
+using System.Web.UI.HtmlControls;
+using System.Text;
 
 namespace Presidencia
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class ReporteReservas : System.Web.UI.Page
     {
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtFechaIni.Text = "01/01/2021";
+            txtFechaFin.Text = "31/12/2090";
         }
 
-        protected void Exportar_Click(object sender, EventArgs e)
-        {
-
-            //List<RepReservas> listaReservas = new List<RepReservas>();
-
-
-            //listaReservas = Page.Session["listaReservas"];
-
-            //string _open = "window.open('MostrarReporteDepreciacion.aspx', '_blank');";
-            //ScriptManager.RegisterStartupScript(this, this.GetType(), Guid.NewGuid().ToString(), _open, true);
-
-        }
+     
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -38,33 +34,45 @@ namespace Presidencia
             string Evento = txtNombreEvento.Text;
             string FechaIni = txtFechaIni.Text;
             string FechaFin = txtFechaFin.Text;
+            string qry = "";
 
 
             SqlConnection cnn = new SqlConnection(CConexion.Obtener());
             SqlCommand cmd = new SqlCommand();
             SqlDataReader rdr = null;
 
-            string qry = @"SELECT IdReserva, Evento, FechaIni, FechaFin, InfoAdicional FROM ReservasAuditorio WHERE (FechaIni BETWEEN @FechaIni AND @FechaFin ) ";
-
-            if (IdReserva != "")
+            if (!string.IsNullOrWhiteSpace(FechaIni) && !string.IsNullOrWhiteSpace(FechaFin))
             {
-                qry += " AND IdReserva = '" + IdReserva + "' ";
-            }
+              
 
-            if (Evento != "")
+                qry = @"SELECT IdReserva, Evento, FechaIni, FechaFin, InfoAdicional FROM ReservasAuditorio WHERE (FechaIni BETWEEN @FechaIni AND @FechaFin ) ";
+
+                if (IdReserva != "")
+                {
+                    qry += " AND IdReserva = '" + IdReserva + "' ";
+                }
+
+                if (Evento != "")
+                {
+                    qry += " AND (Evento LIKE '%" + Evento + "%') ";
+                }
+
+                qry += " ORDER BY FechaIni ASC ";
+            }
+            else
             {
-                qry += " AND (Evento LIKE '%" + Evento + "%') ";
+                MensajeAlerta.AlertaAviso(this, "Alerta!", "Seleccione un rango de fechas");
             }
-
-            qry += " ORDER BY FechaIni ASC ";
-
+        
+               
+          
 
             cmd.Connection = cnn;
             cmd.CommandText = qry;
             SqlDataAdapter adp = new SqlDataAdapter(cmd);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaIni);
-            cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaFin);
+            cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = FechaIni;  //Convert.ToDateTime(FechaIni);
+            cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = FechaFin;    //Convert.ToDateTime(FechaFin);
 
             cmd.Parameters.Add("@IdReserva", System.Data.SqlDbType.VarChar, 100).Value = IdReserva;
             cmd.Parameters.Add("@Evento", System.Data.SqlDbType.VarChar, 250).Value = Evento;
@@ -111,7 +119,7 @@ namespace Presidencia
                 gridReservas.DataSource = listaReservas;
                 gridReservas.DataBind();
 
-                LblTotal.Text = gridReservas.Rows.Count.ToString();
+                LblTotal.Text = "Total de registros: " + gridReservas.Rows.Count.ToString();
                 DivMostrar.Visible = true;
 
                 Page.Session["listaReservas"] = listaReservas;
@@ -123,6 +131,8 @@ namespace Presidencia
                 }
 
             }
+
+
             catch (Exception ex)
             {
                 if (cnn.State == ConnectionState.Open)
@@ -130,7 +140,43 @@ namespace Presidencia
 
                 //  Response.Redirect("404.aspx");
 
+                MensajeAlerta.AlertaAviso(this, "Alerta!", "Seleccione un rango de fechas");
+
             }
         }
+
+        protected void BtnExportar_Click(object sender, EventArgs e)
+        {
+             
+                gridReservas.Width = Unit.Percentage(0);
+                HttpResponse response = Response;
+                StringWriter sw = new StringWriter();
+                HtmlTextWriter htw = new HtmlTextWriter(sw);
+                System.Web.UI.Page pageToRender = new System.Web.UI.Page();
+                HtmlForm form = new HtmlForm();
+
+
+                form.Controls.Add(gridReservas);
+                pageToRender.Controls.Add(form);
+                response.Clear();
+                response.Buffer = true;
+                response.ContentType = "application/vnd.ms-excel";
+                response.AddHeader("Content-Disposition", "attachment;filename=ReporteAudiencias.xls");
+                response.Charset = "UTF-8";
+                response.ContentEncoding = Encoding.Default;
+                pageToRender.RenderControl(htw);
+                response.Write(sw.ToString());
+                response.End();
+
+                gridReservas.Width = Unit.Percentage(100);
+                
+
+        }
+
+
+
+
+
+
     }
 }

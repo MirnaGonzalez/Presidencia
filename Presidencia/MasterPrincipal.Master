@@ -51,6 +51,9 @@
                     <li>
                         <a href="ReporteReservas.aspx"><span class="fa fa-connectdevelop mr-3"></span>Reporte Reservas</a>
                     </li>
+                     <li>
+                        <a href="ConsAudienciaFoto.aspx"><span class="fa fa-connectdevelop mr-3"></span>Consulta de Audiencia</a>
+                    </li>
 
                 </ul>
 
