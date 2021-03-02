@@ -22,6 +22,8 @@ namespace Presidencia.Modelos
         public DateTime FechaFin { get; set; }
         public string InfoAdicional { get; set; }
 
+        public string URLFoto { get; set; }
+
 
 
 

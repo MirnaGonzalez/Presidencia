@@ -58,6 +58,19 @@ namespace Presidencia
                 }
 
                 qry += " ORDER BY FechaIni ASC ";
+
+
+                cmd.Connection = cnn;
+                cmd.CommandText = qry;
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = FechaIni;  //Convert.ToDateTime(FechaIni);
+                cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = FechaFin;    //Convert.ToDateTime(FechaFin);
+
+                cmd.Parameters.Add("@IdReserva", System.Data.SqlDbType.VarChar, 100).Value = IdReserva;
+                cmd.Parameters.Add("@Evento", System.Data.SqlDbType.VarChar, 250).Value = Evento;
+                cmd.Connection = cnn;
+                adp.SelectCommand = cmd;
             }
             else
             {
@@ -67,18 +80,9 @@ namespace Presidencia
                
           
 
-            cmd.Connection = cnn;
-            cmd.CommandText = qry;
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = FechaIni;  //Convert.ToDateTime(FechaIni);
-            cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = FechaFin;    //Convert.ToDateTime(FechaFin);
 
-            cmd.Parameters.Add("@IdReserva", System.Data.SqlDbType.VarChar, 100).Value = IdReserva;
-            cmd.Parameters.Add("@Evento", System.Data.SqlDbType.VarChar, 250).Value = Evento;
 
-            cmd.Connection = cnn;
-            adp.SelectCommand = cmd;
+
 
 
             try
@@ -119,17 +123,18 @@ namespace Presidencia
                 gridReservas.DataSource = listaReservas;
                 gridReservas.DataBind();
 
-                LblTotal.Text = "Total de registros: " + gridReservas.Rows.Count.ToString();
-                DivMostrar.Visible = true;
-
-                Page.Session["listaReservas"] = listaReservas;
-
-
                 if (gridReservas.Rows.Count == 0)
                 {
                     MensajeAlerta.AlertaAviso(this, "Alerta!", " No existen datos con la búsqueda solicitada");
+                    DivMostrar.Visible = false;
                 }
+                else
+                {
 
+                    LblTotal.Text = "Total de registros: " + gridReservas.Rows.Count.ToString();
+                    DivMostrar.Visible = true;
+
+                }
             }
 
 

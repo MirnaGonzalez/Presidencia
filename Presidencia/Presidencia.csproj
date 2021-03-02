@@ -82,6 +82,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\StyleLogin.css" />
     <Content Include="Ejemplo.aspx" />
+    <Content Include="images\Foto.jpg" />
     <Content Include="Inicio.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />

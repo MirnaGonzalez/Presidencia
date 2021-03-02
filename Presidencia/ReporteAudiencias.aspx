@@ -92,7 +92,7 @@
                                         <asp:BoundField DataField="Persona" HeaderText="Persona" />
                                         <asp:BoundField DataField="TipoVisita" HeaderText="Tipo Visita" />
                                         <asp:BoundField DataField="TipoAsunto" HeaderText="Tipo Asunto" />
-                                        <asp:BoundField DataField="Telefono" HeaderText="Telefono" />
+                                        <asp:BoundField DataField="Telefono" HeaderText="Teléfono" />
                                         <asp:BoundField DataField="FechaIni" HeaderText="Fecha Inicio"  />
                                         <asp:BoundField DataField="FechaFin" HeaderText="Fecha Fin" />
                                         <asp:BoundField DataField="InfoAdicional" HeaderText="Información Adicional" />

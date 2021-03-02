@@ -76,31 +76,34 @@ namespace Presidencia
                 }
 
                 qry += " ORDER BY FechaIni ASC ";
+
+                cmd.Connection = cnn;
+                cmd.CommandText = qry;
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaIni);
+                cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaFin);
+
+                cmd.Parameters.Add("@IdAudiencia", System.Data.SqlDbType.VarChar, 100).Value = IdAudiencia;
+                cmd.Parameters.Add("@Persona", System.Data.SqlDbType.VarChar, 250).Value = Persona;
+                cmd.Parameters.Add("@TipoVisita", System.Data.SqlDbType.VarChar, 50).Value = TipoVisita;
+                cmd.Parameters.Add("@TipoAsunto", System.Data.SqlDbType.VarChar, 50).Value = TipoAsunto;
+
+                cmd.Connection = cnn;
+                adp.SelectCommand = cmd;
             }
             else
             {
 
                 MensajeAlerta.AlertaAviso(this, "Alerta!", "Seleccione un rango de fechas");
+                DivMostrar.Visible = false;
             }
                 
 
            
 
 
-            cmd.Connection = cnn;
-            cmd.CommandText = qry;
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaIni);
-            cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaFin);
 
-            cmd.Parameters.Add("@IdAudiencia", System.Data.SqlDbType.VarChar, 100).Value = IdAudiencia;
-            cmd.Parameters.Add("@Persona", System.Data.SqlDbType.VarChar, 250).Value = Persona;
-            cmd.Parameters.Add("@TipoVisita", System.Data.SqlDbType.VarChar, 50).Value = TipoVisita;
-            cmd.Parameters.Add("@TipoAsunto", System.Data.SqlDbType.VarChar, 50).Value = TipoAsunto;
-
-            cmd.Connection = cnn;
-            adp.SelectCommand = cmd;
             
           
 
@@ -122,41 +125,50 @@ namespace Presidencia
 
             try
             {
-                while (rdr.Read())
+                if (rdr.Read())
                 {
 
+                    while (rdr.Read())
+                    {
 
-                    RepAudiencias Audiencias = new RepAudiencias();
-                    Audiencias.IdAudiencia = rdr.GetInt32(0);
-                    Audiencias.Persona = rdr.GetString(1);
-                    Audiencias.TipoVisita = rdr.GetString(2);
-                    Audiencias.TipoAsunto = rdr.GetString(3);
-                    
-
-                    if (!rdr.IsDBNull(rdr.GetOrdinal("Telefono")))
-                        Audiencias.Telefono = rdr.GetString(4);
+                        RepAudiencias Audiencias = new RepAudiencias();
+                        Audiencias.IdAudiencia = rdr.GetInt32(0);
+                        Audiencias.Persona = rdr.GetString(1);
+                        Audiencias.TipoVisita = rdr.GetString(2);
+                        Audiencias.TipoAsunto = rdr.GetString(3);
 
 
-                    Audiencias.FechaIni = rdr.GetDateTime(5);
-                    Audiencias.FechaFin = rdr.GetDateTime(6);
-                    
-                    if (!rdr.IsDBNull(rdr.GetOrdinal("InfoAdicional")))
-                    Audiencias.InfoAdicional = rdr.GetString(7);
+                        if (!rdr.IsDBNull(rdr.GetOrdinal("Telefono")))
+                            Audiencias.Telefono = rdr.GetString(4);
 
-                    listaAudiencias.Add(Audiencias);         
-                }  
+
+                        Audiencias.FechaIni = rdr.GetDateTime(5);
+                        Audiencias.FechaFin = rdr.GetDateTime(6);
+
+                        if (!rdr.IsDBNull(rdr.GetOrdinal("InfoAdicional")))
+                            Audiencias.InfoAdicional = rdr.GetString(7);
+
+                        listaAudiencias.Add(Audiencias);
+
+                    }
+                }
                 cnn.Close();
-               
-                gridAudiencias.DataSource=listaAudiencias;
+                gridAudiencias.DataSource = listaAudiencias;
                 gridAudiencias.DataBind();
-                LblTotal.Text = "Total de registros: " + gridAudiencias.Rows.Count.ToString();
-                DivMostrar.Visible = true;
-               
 
                 if (gridAudiencias.Rows.Count == 0)
                 {
                     MensajeAlerta.AlertaAviso(this, "Alerta!", " No existen datos con la búsqueda solicitada");
+                    DivMostrar.Visible = false;
                 }
+                else
+                { 
+
+                    LblTotal.Text = "Total de registros: " + gridAudiencias.Rows.Count.ToString();
+                    DivMostrar.Visible = true;
+
+                 }
+
 
             }
             catch (Exception ex)

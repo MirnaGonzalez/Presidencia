@@ -6,11 +6,15 @@
 
         <h2 class="mb-4">Consulta de Audiencia </h2>
 
-           <div class="form-row">
-               <asp:Image ID="imgImagen" runat="server" ImageUrl="C:/Users/Mirna/Documents/Visual%20Studio%202019/GIT/Presidencia/Presidencia/images/FotoConCamaraWebExterna.jpg" AlternateText="kyocode" style="width: 294px; height: 171px" />
- 
-           </div>
+           <fieldset style="border-color: black; width: 95%; margin-left: 11px;">
+           
 
+
+
+                <br />
+               
+                   <br />
+           </fieldset>
 
         <div class="card" >
             <div class="card-body">
@@ -19,34 +23,44 @@
                         <ContentTemplate>
 
                     
+                            <div class="table table-responsive">
 
-                            <div class="form-row">
-
+                    <span class="login100-form-avatar">
+						         <asp:Image ID="imgFoto" runat="server"  style="width: 281px; height: 168px" />
+					</span>
 
                                 <div class="form-group col-md-12">
-                                    <label class="h6">Número de audiencia :</label>
-
+                                   
+                                     <asp:Label ID="lblAudiencia" runat="server" Width="15%" CssClass="h6" Font-Bold="True" >Número de audiencia :</asp:Label>
+                                     <asp:Label ID="lblAudiencia0" runat="server" CssClass="h6"  Width="80%"></asp:Label>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label class="h6">Nombre de la persona :</label>
-
+                                     <asp:Label ID="lblPersona" runat="server" Width="15%" CssClass="h6" Font-Bold="True" >Persona :</asp:Label>
+                                    <asp:Label ID="lblPersona0" runat="server" CssClass="h6"  Width="80%"></asp:Label>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label class="h6">Tipo visita :</label>
-
+                                     <asp:Label ID="lblTipoVisita" runat="server" Width="15%" CssClass="h6" Font-Bold="True" >Tipo Visita :</asp:Label>
+                                    <asp:Label ID="lblTipoVisita0" runat="server" CssClass="h6"  Width="80%"></asp:Label>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label class="h6">Tipo asunto :</label>
-
-                                    </asp:DropDownList>
+                                     <asp:Label ID="lblTipoAsunto" runat="server" Width="15%" CssClass="h6" Font-Bold="True" >Tipo Asunto :</asp:Label>   
+                                    <asp:Label ID="lblTipoAsunto0" runat="server" CssClass="h6"  Width="80%"></asp:Label>
                                 </div>
-
-                                
-                            </div>
-                                                        
-                        
-                            <div class="form-row">
-                             
+                                <div class="form-group col-md-12">
+                                     <asp:Label ID="lblTelefono" runat="server" Width="15%" CssClass="h6" Font-Bold="True" >Teléfono :</asp:Label> 
+                                    <asp:Label ID="lblTelefono0" runat="server" CssClass="h6"  Width="80%"></asp:Label>
+                                </div>
+                                <div class="form-group col-md-12">
+                                     <asp:Label ID="lblFecha" runat="server" Width="15%" CssClass="h6" Font-Bold="True" >Fecha :</asp:Label>     
+                                    <asp:Label ID="lblFecha0" runat="server" CssClass="h6"  Width="80%"></asp:Label>
+                                </div>
+                                <div class="form-group col-md-12">
+                                     <asp:Label ID="lblInfoAdicional" runat="server" Width="15%" CssClass="h6" Font-Bold="True" >Información Adicional :</asp:Label>   
+                                    <asp:Label ID="lblInfoAdicional0" runat="server" CssClass="h6"  Width="80%"></asp:Label>
+                                </div>
+                            </div>                                                      
+                
+                            
                                                        
                             <div class="container mb-lg-5">
                                 <div class="row">
