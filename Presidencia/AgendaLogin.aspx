@@ -32,10 +32,11 @@
 
 </head>
 <body>
+	<img src="images/CINTILLO-SUPERIOR2.png" class="img-fluid" alt="Responsive image">
 	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100 p-t-85 p-b-20">
+			<div class="wrap-login100 p-t-10 p-b-20">
 				<form runat="server" class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
 						Agenda Digital de Audiencias
@@ -62,17 +63,14 @@
 							Login
 						</button>--%>
 					<asp:Button ID="btnIngresar" OnClick="btnIngresar_Click"  runat="server" Text="Ingresar" class="container-login100-form-btn login100-form-btn" />
-
 					</div>
-
-
 				</form>
 			</div>
 		</div>
 	</div>
 	
+	<img src="images/CINTILLO-INFERIOR.png" class="img-fluid" alt="Responsive image">
 
-	<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
 	<script src="StyleLogin/vendor/jquery/jquery-3.2.1.min.js"></script>

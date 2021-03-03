@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -81,6 +85,17 @@
     <Content Include="css\style.css" />
     <Content Include="css\StyleLogin.css" />
     <Content Include="Ejemplo.aspx" />
+    <Content Include="footable\css\footable.bootstrap.css" />
+    <Content Include="footable\css\footable.bootstrap.min.css" />
+    <Content Include="footable\footable.js" />
+    <Content Include="footable\footable.min.css" />
+    <Content Include="footable\footable.min.js" />
+    <Content Include="footable\jquery-3.3.1.min.js" />
+    <Content Include="footable\js\footable.js" />
+    <Content Include="footable\js\footable.min.js" />
+    <Content Include="images\CINTILLO-INFERIOR.png" />
+    <Content Include="images\CINTILLO-SUPERIOR.png" />
+    <Content Include="images\CINTILLO-SUPERIOR2.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -166,7 +181,9 @@
     <Content Include="lib\main.min.css" />
     <Content Include="lib\main.min.js" />
     <Content Include="ReservaAuditorio.aspx" />
+    <Content Include="ReservaPresidencia.aspx" />
     <Content Include="Scripts\CalendarioAuditorio.js" />
+    <Content Include="Scripts\CalendarioPresidencia.js" />
     <Content Include="StyleLogin\css\main.css" />
     <Content Include="StyleLogin\css\util.css" />
     <Content Include="StyleLogin\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -240,8 +257,11 @@
     <Compile Include="MasterPrincipal.Master.designer.cs">
       <DependentUpon>MasterPrincipal.Master</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Audiencias.cs" />
     <Compile Include="Modelos\CConexion.cs" />
     <Compile Include="Modelos\MensajeAlerta.cs" />
+    <Compile Include="Modelos\NArchivosFTP.cs" />
+    <Compile Include="Modelos\Personas.cs" />
     <Compile Include="Modelos\ReservaAudi.cs" />
     <Compile Include="Modelos\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -251,6 +271,13 @@
     </Compile>
     <Compile Include="ReservaAuditorio.aspx.designer.cs">
       <DependentUpon>ReservaAuditorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaPresidencia.aspx.cs">
+      <DependentUpon>ReservaPresidencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservaPresidencia.aspx.designer.cs">
+      <DependentUpon>ReservaPresidencia.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
