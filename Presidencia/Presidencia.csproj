@@ -180,6 +180,8 @@
     <Content Include="lib\main.js" />
     <Content Include="lib\main.min.css" />
     <Content Include="lib\main.min.js" />
+    <Content Include="ReporteAudiencias.aspx" />
+    <Content Include="ReporteReservas.aspx" />
     <Content Include="ReservaAuditorio.aspx" />
     <Content Include="ReservaPresidencia.aspx" />
     <Content Include="Scripts\CalendarioAuditorio.js" />
@@ -260,11 +262,30 @@
     <Compile Include="Modelos\Audiencias.cs" />
     <Compile Include="Modelos\CConexion.cs" />
     <Compile Include="Modelos\MensajeAlerta.cs" />
+<<<<<<< HEAD
     <Compile Include="Modelos\NArchivosFTP.cs" />
     <Compile Include="Modelos\Personas.cs" />
+=======
+    <Compile Include="Modelos\RepAudiencias.cs" />
+    <Compile Include="Modelos\RepReservas.cs" />
+>>>>>>> c1e2239c5811032f158a3a33cf3b0f86c7da5abd
     <Compile Include="Modelos\ReservaAudi.cs" />
     <Compile Include="Modelos\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteAudiencias.aspx.cs">
+      <DependentUpon>ReporteAudiencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteAudiencias.aspx.designer.cs">
+      <DependentUpon>ReporteAudiencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteReservas.aspx.cs">
+      <DependentUpon>ReporteReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteReservas.aspx.designer.cs">
+      <DependentUpon>ReporteReservas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReservaAuditorio.aspx.cs">
       <DependentUpon>ReservaAuditorio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

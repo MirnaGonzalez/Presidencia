@@ -52,6 +52,16 @@
                         </asp:LinkButton>
 <%--                        <a class="mt-lg-5" href="ReservaPresidencia.aspx"><span class="fa fa-close mr-3"></span>Cerrar Sesión</a>--%>
                     </li>
+<<<<<<< HEAD
+=======
+                    <li>
+                        <a href="ReporteAudiencias.aspx"><span class="fa fa-connectdevelop mr-3"></span>Reporte Audiencias</a>
+                    </li>
+                    <li>
+                        <a href="ReporteReservas.aspx"><span class="fa fa-connectdevelop mr-3"></span>Reporte Reservas</a>
+                    </li>
+
+>>>>>>> c1e2239c5811032f158a3a33cf3b0f86c7da5abd
                 </ul>
 
 
