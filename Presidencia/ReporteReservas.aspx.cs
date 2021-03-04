@@ -20,8 +20,12 @@ namespace Presidencia
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtFechaIni.Text = "01/01/2021";
-            txtFechaFin.Text = "31/12/2090";
+            if (!IsPostBack)
+            {
+                txtFechaIni.Text = DateTime.Today.ToString("yyyyy-MM") + "-01";
+                txtFechaFin.Text = DateTime.Today.ToString("yyyyy-MM-dd");
+
+            }
         }
 
      

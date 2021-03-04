@@ -65,9 +65,9 @@
                             <br />
 
 
-                            <div>
+                           
                         
-                                <asp:GridView ID="gridReservas" CssClass="StyleGridV" runat="server" Width="100%"
+                                <asp:GridView ID="gridReservas"  CssClass="table  table-striped table-hover table-bordered" runat="server" Width="100%"
                                     AutoGenerateColumns="False" Height="160px">
                                     <Columns>
 

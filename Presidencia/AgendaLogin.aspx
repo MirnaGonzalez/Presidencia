@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="StyleLogin/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/title.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="StyleLogin/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -32,10 +32,13 @@
 
 </head>
 <body>
+	<!-- <img src="images/CINTILLO-SUPERIOR.png" class="img-fluid" alt="Responsive image" id="bannerSup">-->
+
+	<asp:Image ID="imgBannerSup" runat="server" class="img-fluid" />
 	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100 p-t-85 p-b-20">
+			<div class="wrap-login100 p-t-10 p-b-20">
 				<form runat="server" class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
 						Agenda Digital de Audiencias
@@ -62,17 +65,14 @@
 							Login
 						</button>--%>
 					<asp:Button ID="btnIngresar" OnClick="btnIngresar_Click"  runat="server" Text="Ingresar" class="container-login100-form-btn login100-form-btn" />
-
 					</div>
-
-
 				</form>
 			</div>
 		</div>
 	</div>
 	
-
-	<div id="dropDownSelect1"></div>
+	<%--	<img src="images/CINTILLO-INFERIOR.png" class="img-fluid" alt="Responsive image" id="bannerInf"> --%>
+	 <asp:Image ID="imgBannerInf" runat="server" class="img-fluid" alt="Responsive image"/>
 	
 <!--===============================================================================================-->
 	<script src="StyleLogin/vendor/jquery/jquery-3.2.1.min.js"></script>

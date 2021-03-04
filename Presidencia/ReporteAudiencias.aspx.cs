@@ -19,8 +19,15 @@ namespace Presidencia
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtFechaIni.Text = "01/01/2021";
-            txtFechaFin.Text = "31/12/2090";
+            if (!IsPostBack )
+            {
+                txtFechaIni.Text = DateTime.Today.ToString("yyyyy-MM") + "-01";   
+                txtFechaFin.Text = DateTime.Today.ToString("yyyyy-MM-dd");
+
+            }
+
+
+   
         }
 
         protected void BtnExportar_Click(object sender, EventArgs e)
@@ -53,7 +60,7 @@ namespace Presidencia
             if (!string.IsNullOrWhiteSpace(FechaIni) && !string.IsNullOrWhiteSpace(FechaFin))
             {
               
-                qry = @"SELECT IdAudiencia, Persona, TipoVisita, TipoAsunto, Telefono, FechaIni, FechaFin, InfoAdicional FROM vta_ReporteAudiencias WHERE (FechaIni BETWEEN   @FechaIni   AND @FechaFin ) ";
+                qry = @"SELECT IdAudiencia, Persona, TipoVisita, TipoAsunto, Telefono, FechaIni, FechaFin, InfoAdicional FROM vta_ReporteAudienciasSolicitante WHERE (FechaIni BETWEEN   @FechaIni   AND @FechaFin ) ";
 
                 if (IdAudiencia != "")
                 {

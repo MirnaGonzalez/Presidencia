@@ -18,5 +18,20 @@ namespace Presidencia.Modelos
             return "http://serviciowebpjhgo.azurewebsites.net/api/";
         }
 
+        internal static string ObtenerRutaFTP()
+        {
+            return "ftp://192.168.73.7/"; //"ftp://192.168.73.245/Tocas/Notificaciones/";
+        }
+        internal static string ObtenerUsuarioFTP()
+        {
+            return "FTPUER"; 
+        }
+        internal static string ObtenerClaveFTP()
+        {
+            return "ftp2020A"; 
+        }
+
+
+
     }
 }

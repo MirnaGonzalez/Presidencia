@@ -1,16 +1,45 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="Presidencia.Inicio" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="content" class="p-4 p-md-5 pt-5">
-        <div class="form-row">
-                <div class="col-md-12 text text-center">
-                    <div class="card">
-                        <div class="card-body" style="padding:150px">
-                            <h1 class="display-4">Sistemas De Presidencia TSJH</h1>
-                            <p class="lead">Consulta de agenda diaria de presidencia, asi como del auditorio.</p>
-                        </div>
-                    </div>
 
-                </div>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            color: white;
+            text-align: center;
+        }
+
+
+
+        .avatar {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+    </style>
+
+
+    <div id="content" class="pt-5">
+        <asp:Image ID="imgBannerSup" runat="server" class="img-fluid" ImageUrl="~/images/CINTILLO-SUPERIOR.png" />
+
+       	<div class="text-center" style="margin-top:5%">
+               <img src="images/PoderJudicialHgo.png" width="30%" />
+	   </div>
+
+        <div class="footer">
+
+            <asp:Image ID="imgBannerInf" runat="server" class="img-fluid" ImageUrl="~/images/CINTILLO-INFERIOR.png" />
+
+
         </div>
     </div>
+
+
+
+
+
 </asp:Content>
