@@ -89,7 +89,7 @@ namespace Presidencia
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaIni);
-                cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaFin);
+                cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaFin).AddDays(1);
 
 
                 cmd.Connection = cnn;

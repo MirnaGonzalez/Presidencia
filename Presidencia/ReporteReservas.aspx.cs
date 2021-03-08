@@ -68,8 +68,8 @@ namespace Presidencia
                 cmd.CommandText = qry;
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = FechaIni;  //Convert.ToDateTime(FechaIni);
-                cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = FechaFin;    //Convert.ToDateTime(FechaFin);
+                cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaIni);
+                cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaFin).AddDays(1);
 
                 cmd.Parameters.Add("@IdReserva", System.Data.SqlDbType.VarChar, 100).Value = IdReserva;
                 cmd.Parameters.Add("@Evento", System.Data.SqlDbType.VarChar, 250).Value = Evento;
