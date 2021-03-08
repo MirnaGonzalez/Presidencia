@@ -29,7 +29,7 @@
         editable: true,
         dayMaxEvents: true, // allow "more" link when too many events
         events: {
-            url: 'http://serviciowebpjhgo.azurewebsites.net/api/CitasAP?esPresi=SI',
+            url: 'https://serviciowebpjhgo.azurewebsites.net/api/CitasAP?esPresi=SI',
             cache: false,
             failure: function () {
                 document.getElementById('script-warning').style.display = 'block'

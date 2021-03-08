@@ -470,6 +470,10 @@
     <Content Include="StyleLogin\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="StyleLogin\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="StyleLogin\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="Properties\PublishProfiles\ADAPJEH - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ADAPJEH - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ADAPJEH - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

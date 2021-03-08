@@ -21,8 +21,8 @@ namespace Presidencia
         {
             if (!IsPostBack )
             {
-                txtFechaIni.Text = DateTime.Today.ToString("yyyyy-MM") + "-01";   
-                txtFechaFin.Text = DateTime.Today.ToString("yyyyy-MM-dd");
+                txtFechaIni.Text = DateTime.Today.ToString("yyyy-MM") + "-01";   
+                txtFechaFin.Text = DateTime.Today.ToString("yyyy-MM-dd");
 
             }
 
@@ -40,7 +40,7 @@ namespace Presidencia
             List<RepAudiencias> listaAudiencias = new List<RepAudiencias>();
 
 
-            string IdAudiencia = txtNumAudiencia.Text ;
+            string IdAudiencia = txtNumAudiencia.Text;
             string Persona = txtNombrePersona.Text;
             string TipoVisita = ddlTipoVisita.SelectedValue;
             string TipoAsunto = ddlTipoAsunto.SelectedValue;
@@ -59,12 +59,12 @@ namespace Presidencia
 
             if (!string.IsNullOrWhiteSpace(FechaIni) && !string.IsNullOrWhiteSpace(FechaFin))
             {
-              
-                qry = @"SELECT IdAudiencia, Persona, TipoVisita, TipoAsunto, Telefono, FechaIni, FechaFin, InfoAdicional FROM vta_ReporteAudienciasSolicitante WHERE (FechaIni BETWEEN   @FechaIni   AND @FechaFin ) ";
+
+                qry = @"SELECT IdAudiencia, Persona, TipoVisita, TipoAsunto, Telefono, FechaIni, FechaFin, InfoAdicional FROM vta_ReporteAudienciasSolicitante WHERE (FechaIni BETWEEN @FechaIni AND @FechaFin)";
 
                 if (IdAudiencia != "")
                 {
-                    qry += " AND IdAudiencia = '" + IdAudiencia + "' ";
+                   qry += " AND IdAudiencia = " + IdAudiencia ;
                 }
 
                 if (Persona != "")
@@ -91,10 +91,6 @@ namespace Presidencia
                 cmd.Parameters.Add("@fechaIni", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaIni);
                 cmd.Parameters.Add("@fechaFin", SqlDbType.DateTime).Value = Convert.ToDateTime(FechaFin);
 
-                cmd.Parameters.Add("@IdAudiencia", System.Data.SqlDbType.VarChar, 100).Value = IdAudiencia;
-                cmd.Parameters.Add("@Persona", System.Data.SqlDbType.VarChar, 250).Value = Persona;
-                cmd.Parameters.Add("@TipoVisita", System.Data.SqlDbType.VarChar, 50).Value = TipoVisita;
-                cmd.Parameters.Add("@TipoAsunto", System.Data.SqlDbType.VarChar, 50).Value = TipoAsunto;
 
                 cmd.Connection = cnn;
                 adp.SelectCommand = cmd;
@@ -106,13 +102,7 @@ namespace Presidencia
                 DivMostrar.Visible = false;
             }
                 
-
-           
-
-
-
-            
-          
+     
 
             try
             {
@@ -132,7 +122,7 @@ namespace Presidencia
 
             try
             {
-                if (rdr.Read())
+                if (rdr.HasRows)
                 {
 
                     while (rdr.Read())

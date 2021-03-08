@@ -39,18 +39,19 @@
 
                 <ul class="list-unstyled components mb-5">
                     <li>
-                        <a href="ReservaAuditorio.aspx"><span class="fa fa-calendar-check-o mr-3"></span>Reserva de Auditorio </a>
-                    </li>
-                    <li>
-                        <a href="ReservaPresidencia.aspx"><span class="fa fa-calendar-plus-o mr-3"></span>Agenda Presidencia</a>
+                        <a href="ReservaPresidencia.aspx"><span class="fa fa-calendar-check-o"></span> Agenda Presidencia</a>
                     </li>
 
+                     <li>
+                        <a href="ReporteAudiencias.aspx"><span class="fa fa-file-text-o"></span> Reporte Agenda</a>
+                    </li>
 
                     <li>
-                        <a href="ReporteAudiencias.aspx"><span class="fa fa-connectdevelop mr-3"></span>Reporte Audiencias</a>
+                        <a href="ReservaAuditorio.aspx"><span class="fa fa-calendar"></span> Reservas Auditorio </a>
                     </li>
+                 
                     <li>
-                        <a href="ReporteReservas.aspx"><span class="fa fa-connectdevelop mr-3"></span>Reporte Reservas</a>
+                        <a href="ReporteReservas.aspx"><span class="fa fa-file-text-o"></span> Reporte Reservas</a>
                     </li>
 
                                           <li> 

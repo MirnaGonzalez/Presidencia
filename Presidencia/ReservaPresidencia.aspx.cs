@@ -174,9 +174,10 @@ namespace Presidencia
             }
             else if (iAgregar.InnerText== "Modificar")
             {
-                var person = listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value));
+              //  var person = listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value));
+                var person = listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value));
 
-                iAgregar.InnerText = "Agregar";
+                iAgregar.InnerText = "Agregar Asistente";
 
                 if (person.URLFoto == "" || person.URLFoto == null)
                 {
@@ -194,17 +195,24 @@ namespace Presidencia
                             if (ArchivoCreado)
                             {
 
-                                listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).Nombre = txt_Nombre.Text.Trim();
-                                listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).APaterno = txt_AP.Text.Trim();
-                                listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).AMaterno = txt_AM.Text.Trim();
-                                listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).URLFoto = NombreArchivo;
+                                //listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).Nombre = txt_Nombre.Text.Trim();
+                                //listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).APaterno = txt_AP.Text.Trim();
+                                //listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).AMaterno = txt_AM.Text.Trim();
+                                //listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).URLFoto = NombreArchivo;
+
+
+                                listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value)).Nombre = txt_Nombre.Text.Trim();
+                                listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value)).APaterno = txt_AP.Text.Trim();
+                                listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value)).AMaterno = txt_AM.Text.Trim();
+                                listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value)).URLFoto = NombreArchivo;
+
 
                                 // listaPersonas.Remove(person);
                                 //LblAdjuntar.Text = "El archivo se guardó correctamente.";
                                 // Personas personas = new Personas { Nombre = txt_Nombre.Text.Trim(), APaterno = txt_AP.Text.Trim(), AMaterno = txt_AM.Text.Trim(), URLFoto = NombreArchivo };
                                 //listaPersonas.Add(personas);
                                 bool realizado = false;
-                                Personas.ModificarPersona(listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)), ref realizado);
+                                Personas.ModificarPersona(listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value)), ref realizado);
 
                                 Session["listaPersonas"] = listaPersonas;
                                 gridModificar.DataSource = listaPersonas;
@@ -228,15 +236,21 @@ namespace Presidencia
                         // listaPersonas.Add(personas);
 
 
-                        listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).Nombre = txt_Nombre.Text.Trim();
-                        listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).APaterno = txt_AP.Text.Trim();
-                        listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).AMaterno = txt_AM.Text.Trim();
+                        //listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).Nombre = txt_Nombre.Text.Trim();
+                        //listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).APaterno = txt_AP.Text.Trim();
+                        //listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)).AMaterno = txt_AM.Text.Trim();
+
+                        listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value)).Nombre = txt_Nombre.Text.Trim();
+                        listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value)).APaterno = txt_AP.Text.Trim();
+                        listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value)).AMaterno = txt_AM.Text.Trim();
+
                         // listaPersonas.Remove(person);
                         //LblAdjuntar.Text = "El archivo se guardó correctamente.";
                         // Personas personas = new Personas { Nombre = txt_Nombre.Text.Trim(), APaterno = txt_AP.Text.Trim(), AMaterno = txt_AM.Text.Trim(), URLFoto = NombreArchivo };
                         //listaPersonas.Add(personas);
                         bool realizado = false;
-                        Personas.ModificarPersona(listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)), ref realizado);
+                      //  Personas.ModificarPersona(listaPersonas.ElementAt(int.Parse(hfIndexSeleccionado.Value)), ref realizado);
+                        Personas.ModificarPersona(listaPersonas.Find(x => x.IdPersona == int.Parse(hfIndexSeleccionado.Value)), ref realizado);
 
                         Session["listaPersonas"] = listaPersonas;
                         gridModificar.DataSource = listaPersonas;
@@ -263,11 +277,13 @@ namespace Presidencia
                             {
                                 listaPersonas.Remove(person);
                                 //LblAdjuntar.Text = "El archivo se guardó correctamente.";
-                                Personas personas = new Personas { Nombre = txt_Nombre.Text.Trim(), APaterno = txt_AP.Text.Trim(), AMaterno = txt_AM.Text.Trim(), URLFoto = NombreArchivo };
+                                Personas personas = new Personas { IdPersona= int.Parse(hfIndexSeleccionado.Value), Nombre = txt_Nombre.Text.Trim(), APaterno = txt_AP.Text.Trim(), AMaterno = txt_AM.Text.Trim(), URLFoto = NombreArchivo };
                                 listaPersonas.Add(personas);
+                                bool realizado = false;
+                                Personas.ModificarPersona(personas, ref realizado);
                                 Session["listaPersonas"] = listaPersonas;
-                                gridPersonas.DataSource = listaPersonas;
-                                gridPersonas.DataBind();
+                                gridModificar.DataSource = listaPersonas;
+                                gridModificar.DataBind();
                                 VaciarPersona();
 
                             }
@@ -281,11 +297,13 @@ namespace Presidencia
                     {
                         //LblAdjuntar.Text = "Seleccione el archivo a guardar.";
                         listaPersonas.Remove(person);
-                        Personas personas = new Personas { Nombre = txt_Nombre.Text.Trim(), APaterno = txt_AP.Text.Trim(), AMaterno = txt_AM.Text.Trim() };
+                        Personas personas = new Personas { IdPersona = int.Parse(hfIndexSeleccionado.Value), Nombre = txt_Nombre.Text.Trim(), APaterno = txt_AP.Text.Trim(), AMaterno = txt_AM.Text.Trim() };
                         listaPersonas.Add(personas);
+                        bool realizado = false;
+                        Personas.ModificarPersona(personas, ref realizado);
                         Session["listaPersonas"] = listaPersonas;
-                        gridPersonas.DataSource = listaPersonas;
-                        gridPersonas.DataBind();
+                        gridModificar.DataSource = listaPersonas;
+                        gridModificar.DataBind();
                         VaciarPersona();
                     }
                 }
@@ -854,12 +872,13 @@ namespace Presidencia
             GridViewRow row;
             GridView grid = sender as GridView;
             index = Convert.ToInt32(e.CommandArgument);
+            int idPer = listaPersonas.ElementAt(index).IdPersona;
             row = grid.Rows[index];
 
             switch (e.CommandName)
             {
                 case "Modificar":
-                    hfIndexSeleccionado.Value = index.ToString();
+                    hfIndexSeleccionado.Value = idPer.ToString();
                     VaciarPersona();
                     var person = listaPersonas.ElementAt(index);
                     txt_Nombre.Text = person.Nombre;

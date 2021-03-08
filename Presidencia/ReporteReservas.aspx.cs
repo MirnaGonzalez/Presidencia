@@ -22,8 +22,8 @@ namespace Presidencia
         {
             if (!IsPostBack)
             {
-                txtFechaIni.Text = DateTime.Today.ToString("yyyyy-MM") + "-01";
-                txtFechaFin.Text = DateTime.Today.ToString("yyyyy-MM-dd");
+                txtFechaIni.Text = DateTime.Today.ToString("yyyy-MM") + "-01";
+                txtFechaFin.Text = DateTime.Today.ToString("yyyy-MM-dd");
 
             }
         }

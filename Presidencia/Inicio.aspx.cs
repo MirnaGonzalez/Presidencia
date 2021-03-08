@@ -33,8 +33,10 @@ namespace Presidencia
                 }
                 if (Request.Browser.IsMobileDevice == true && strUserAgent.Contains("android"))
                 {
-                    imgBannerSup.ImageUrl = "~/images/CINTILLO-SUPERIORGalaxy.png";
-                    imgBannerInf.ImageUrl = "~/images/CINTILLO-INFERIORGalaxy.png";
+                    //   imgBannerSup.ImageUrl = "~/images/CINTILLO-SUPERIORAndroid.png";
+                    //  imgBannerInf.ImageUrl = "~/images/CINTILLO-INFERIORAndroid.png";
+                    imgBannerSup.ImageUrl = "~/images/CINTILLO-SUPERIORIphone.png";
+                    imgBannerInf.ImageUrl = "~/images/CINTILLO-INFERIORIphone.png";
                 }
 
 

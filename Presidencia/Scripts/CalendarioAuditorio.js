@@ -117,7 +117,7 @@ var initialLocaleCode = 'es';
         editable: true,
         dayMaxEvents: true, // allow "more" link when too many events
         events: {
-            url: 'http://serviciowebpjhgo.azurewebsites.net/Api/CitasAP',
+            url: 'https://serviciowebpjhgo.azurewebsites.net/Api/CitasAP',
             cache: false,
             failure: function () {
                 document.getElementById('script-warning').style.display = 'block'

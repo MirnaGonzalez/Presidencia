@@ -62,7 +62,7 @@ namespace Presidencia.Modelos
             }
         }
 
-        public static void ModificarPersona( Personas listapersonas, ref bool Resultado)
+        public static void ModificarPersona( Personas personas, ref bool Resultado)
         {
             Resultado = false;
            
@@ -79,13 +79,24 @@ namespace Presidencia.Modelos
                             SqlCommand command2 = new SqlCommand(modificarPersona, connection, tx);
                             command2.CommandType = CommandType.StoredProcedure;
 
-                            command2.Parameters.Add(new SqlParameter("@IdPersona", SqlDbType.Int)).Value = listapersonas.IdPersona;
-                            command2.Parameters.Add(new SqlParameter("@Nombre", SqlDbType.VarChar)).Value = listapersonas.Nombre.ToUpper();
-                            command2.Parameters.Add(new SqlParameter("@APaterno", SqlDbType.VarChar)).Value = listapersonas.APaterno.ToUpper();
-                            command2.Parameters.Add(new SqlParameter("@AMaterno", SqlDbType.VarChar)).Value = listapersonas.AMaterno.ToUpper();
-                            command2.Parameters.Add(new SqlParameter("@URL", SqlDbType.VarChar)).Value = listapersonas.URLFoto;
-                            command2.ExecuteScalar();
-                        
+                            command2.Parameters.Add(new SqlParameter("@IdPersona", SqlDbType.Int)).Value = personas.IdPersona;
+                            command2.Parameters.Add(new SqlParameter("@Nombre", SqlDbType.VarChar)).Value = personas.Nombre.ToUpper();
+                            command2.Parameters.Add(new SqlParameter("@APaterno", SqlDbType.VarChar)).Value = personas.APaterno.ToUpper();
+                            command2.Parameters.Add(new SqlParameter("@AMaterno", SqlDbType.VarChar)).Value = personas.AMaterno.ToUpper();
+
+
+                        if (personas.URLFoto == "" || personas.URLFoto == null)                   
+                            command2.Parameters.Add(new SqlParameter("@URL", SqlDbType.VarChar)).Value = DBNull.Value;
+                        else
+                            command2.Parameters.Add(new SqlParameter("@URL", SqlDbType.VarChar)).Value = personas.URLFoto;
+
+
+
+
+
+                        int result = Convert.ToInt32(command2.ExecuteScalar());
+
+
 
                         tx.Commit();
 

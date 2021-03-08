@@ -14,9 +14,9 @@ namespace Presidencia
         {
             if (!IsPostBack)
             {
-                //string javaScript = "myFunction();";
+             //   string javaScript = "myFunction();";
 
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "script", javaScript, true);
+               // ScriptManager.RegisterStartupScript(this, this.GetType(), "script", javaScript, true);
 
                 //string strUserAgent = Request.UserAgent.ToString().ToLower();
 
